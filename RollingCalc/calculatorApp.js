@@ -1,4 +1,5 @@
-var calculator = require('./calculator');
+var calculatorFactory = require('./calculator');
+var calculator = calculatorFactory();
 
 calculator.add(100);
 calculator.sub(50);
