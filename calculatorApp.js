@@ -1,17 +1,4 @@
-var calculator = {
-    add : function (x, y) {
-        return x + y;
-    },
-    sub : function (x, y) {
-        return x - y;
-    },
-    mul : function (x, y) {
-        return x * y;
-    },
-    div : function (x, y) {
-        return x / y;
-    },
-};
+var calculator = require('./calculator');
 
 console.log(calculator.add(2, 4));
 console.log(calculator.sub(2, 4));
