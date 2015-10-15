@@ -5,6 +5,7 @@ var path = require('path');
 var server = http.createServer(function(req, res){
     var resource = path.join(__dirname, req.url);
     if (fs.existsSync(resource)) {
+    /*
         fs.readFile(resource, function(err, fileContents) {
             if (err) {
                 res.statusCode = 500;
@@ -14,6 +15,9 @@ var server = http.createServer(function(req, res){
             res.write(fileContents);
             res.end();
         })
+    */
+        var stream = fs.createReadStream(resource);
+        stream.pipe(res);
     }
     else {
         res.statusCode = 404;
